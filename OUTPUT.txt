@@ -1,0 +1,90 @@
+(rh㉿kali)-[~]
+└─$ sudo apt install ufw    
+The following packages were automatically installed and are no longer required:
+  crackmapexec            libicu-dev                   libpython3.12-stdlib               python3-pyinstaller-hooks-contrib  ruby-async-io                     ruby-http              ruby-parseconfig      ruby-tilt
+  firebird3.0-common      libjs-source-map             libpython3.12t64                   python3-pywerview                  ruby-atomic                       ruby-http-accept       ruby-qr4r             ruby-timers
+  firebird3.0-common-doc  libjxl0.9                    libqt5sensors5                     python3-requests-ntlm              ruby-buftok                       ruby-http-form-data    ruby-rack             ruby-tins
+  icu-devtools            liblbfgsb0                   libqt5webkit5                      python3-setproctitle               ruby-console                      ruby-http-parser       ruby-rack-protection  ruby-twitter
+  lame                    libldap-2.5-0                libtag1v5                          python3-tomlkit                    ruby-daemons                      ruby-http-parser.rb    ruby-rack-session     ruby-zeitwerk
+  libabsl20230802         libmagickcore-6.q16-7-extra  libtag1v5-vanilla                  python3-wheel-whl                  ruby-em-websocket                 ruby-maxmind-db        ruby-rackup           ruby3.1
+  libconfig++9v5          libmagickcore-6.q16-7t64     libtagc0                           python3.12                         ruby-equalizer                    ruby-memoizable        ruby-rest-client      ruby3.1-dev
+  libdirectfb-1.7-7t64    libmagickwand-6.q16-7t64     libutempter0                       python3.12-dev                     ruby-erubis                       ruby-mojo-magick       ruby-rqrcode-core     ruby3.1-doc
+  libflac12t64            libmbedcrypto7t64            libwebrtc-audio-processing1        python3.12-minimal                 ruby-espeak                       ruby-msfrpc-client     ruby-rushover         sphinx-rtd-theme-common
+  libfuse3-3              libmsgraph-0-1               libx265-209                        python3.12-tk                      ruby-eventmachine                 ruby-msgpack           ruby-simple-oauth     strongswan
+  libgdal35               libnetcdf19t64               python3-aioconsole                 python3.12-venv                    ruby-execjs                       ruby-multipart-post    ruby-sinatra          thin
+  libgeos3.13.0           libopenh264-7                python3-dunamai                    ruby-activemodel                   ruby-ffi-compiler                 ruby-mustermann        ruby-slack-notifier
+  libglapi-mesa           libpaper1                    python3-nfsclient                  ruby-activerecord                  ruby-fiber-local                  ruby-naught            ruby-sync
+  libgumbo2               libpoppler140                python3-ntlm-auth                  ruby-ansi                          ruby-hashie                       ruby-netrc             ruby-term-ansicolor
+  libhdf5-103-1t64        libpython3.12-dev            python3-packaging-whl              ruby-async                         ruby-hashie-forbidden-attributes  ruby-nio4r             ruby-terser
+  libhttp-parser2.9       libpython3.12-minimal        python3-poetry-dynamic-versioning  ruby-async-dns                     ruby-hitimes                      ruby-otr-activerecord  ruby-thread-safe
+Use 'sudo apt autoremove' to remove them.
+
+Installing:
+  ufw
+
+Suggested packages:
+  rsyslog
+
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 3
+  Download size: 169 kB
+  Space needed: 880 kB / 53.5 GB available
+
+Get:1 http://kali.download/kali kali-rolling/main amd64 ufw all 0.36.2-9 [169 kB]
+Fetched 169 kB in 6s (29.0 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package ufw.
+(Reading database ... 466167 files and directories currently installed.)
+Preparing to unpack .../archives/ufw_0.36.2-9_all.deb ...
+Unpacking ufw (0.36.2-9) ...
+Setting up ufw (0.36.2-9) ...
+Creating config file /etc/ufw/before.rules with new version
+Creating config file /etc/ufw/before6.rules with new version
+Creating config file /etc/ufw/after.rules with new version
+Creating config file /etc/ufw/after6.rules with new version
+update-rc.d: We have no instructions for the ufw init script.
+update-rc.d: It looks like a non-network service, we enable it.
+Created symlink '/etc/systemd/system/multi-user.target.wants/ufw.service' → '/usr/lib/systemd/system/ufw.service'.
+Processing triggers for kali-menu (2025.3.0) ...
+Processing triggers for man-db (2.13.1-1) ...
+                                                                                                                                                                                                                                           
+┌──(rh㉿kali)-[~]
+└─$ sudo ufw enable     
+
+Firewall is active and enabled on system startup
+                                                                                                                                                                                                                                           
+┌──(rh㉿kali)-[~]
+└─$ sudo ufw status numbered
+
+Status: active
+                                                                                                                                                                                                                                           
+┌──(rh㉿kali)-[~]
+└─$ sudo ufw deny 23
+
+Rule added
+Rule added (v6)
+                                                                                                                                                                                                                                           
+┌──(rh㉿kali)-[~]
+└─$ sudo ufw allow 22
+
+Rule added
+Rule added (v6)
+                                                                                                                                                                                                                                           
+┌──(rh㉿kali)-[~]
+└─$ sudo ufw status numbered
+
+Status: active
+
+     To                         Action      From
+     --                         ------      ----
+[ 1] 23                         DENY IN     Anywhere                  
+[ 2] 22                         ALLOW IN    Anywhere                  
+[ 3] 23 (v6)                    DENY IN     Anywhere (v6)             
+[ 4] 22 (v6)                    ALLOW IN    Anywhere (v6)             
+
+                                                                                                                                                                                                                                           
+┌──(rh㉿kali)-[~]
+└─$ sudo ufw disable        
+[sudo] password for rh: 
+Firewall stopped and disabled on system startup
+
